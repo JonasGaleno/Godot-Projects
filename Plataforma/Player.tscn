@@ -1,0 +1,294 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://sprites_batman_cut/Batman_13.png" type="Texture" id=2]
+[ext_resource path="res://sprites_batman_cut/Batman_15.png" type="Texture" id=3]
+[ext_resource path="res://sprites_batman_cut/Batman_14.png" type="Texture" id=4]
+[ext_resource path="res://sprites_batman_cut/Batman_26.png" type="Texture" id=5]
+[ext_resource path="res://sprites_batman_cut/Batman_7.png" type="Texture" id=6]
+[ext_resource path="res://sprites_batman_cut/Batman_8.png" type="Texture" id=7]
+[ext_resource path="res://sprites_batman_cut/Batman_10.png" type="Texture" id=8]
+[ext_resource path="res://sprites_batman_cut/Batman_12.png" type="Texture" id=9]
+[ext_resource path="res://sprites_batman_cut/Batman_16.png" type="Texture" id=10]
+[ext_resource path="res://sprites_batman_cut/Batman_22.png" type="Texture" id=11]
+[ext_resource path="res://sprites_batman_cut/Batman_11.png" type="Texture" id=12]
+[ext_resource path="res://sprites_batman_cut/Batman_24.png" type="Texture" id=13]
+[ext_resource path="res://sprites_batman_cut/Batman_9.png" type="Texture" id=14]
+[ext_resource path="res://sprites_batman_cut/Batman_23.png" type="Texture" id=15]
+[ext_resource path="res://sprites_batman_cut/Batman_25.png" type="Texture" id=16]
+[ext_resource path="res://sprites_batman_cut/Batman_5.png" type="Texture" id=17]
+[ext_resource path="res://sprites_batman_cut/Batman_6.png" type="Texture" id=18]
+[ext_resource path="res://sprites_batman_cut/Batman_27.png" type="Texture" id=19]
+[ext_resource path="res://sprites_batman_cut/Batman_30.png" type="Texture" id=20]
+[ext_resource path="res://sprites_batman_cut/Batman_31.png" type="Texture" id=21]
+[ext_resource path="res://sprites_batman_cut/Batman_28.png" type="Texture" id=22]
+[ext_resource path="res://sprites_batman_cut/Batman_29.png" type="Texture" id=23]
+[ext_resource path="res://sprites_batman_cut/Batman_4.png" type="Texture" id=24]
+[ext_resource path="res://sprites_batman_cut/Batman_1.png" type="Texture" id=25]
+[ext_resource path="res://sprites_batman_cut/Batman_2.png" type="Texture" id=26]
+[ext_resource path="res://sprites_batman_cut/Batman_3.png" type="Texture" id=27]
+
+[sub_resource type="Animation" id=18]
+resource_name = "Attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 10 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Dead"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 25 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 12 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 25 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer:editor_description")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayer:root_node")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ NodePath("..") ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walk"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 17 ), ExtResource( 18 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "Attack"
+
+[sub_resource type="AnimationNodeTransition" id=16]
+input_count = 2
+input_0/name = "no_attack"
+input_0/auto_advance = false
+input_1/name = "attack"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "Dead"
+
+[sub_resource type="AnimationNodeTransition" id=14]
+input_count = 2
+input_0/name = "alive"
+input_0/auto_advance = false
+input_1/name = "dead"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeTransition" id=10]
+input_count = 2
+input_0/name = "Ground"
+input_0/auto_advance = false
+input_1/name = "Air"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeTransition" id=11]
+input_count = 2
+input_0/name = "Idle"
+input_0/auto_advance = false
+input_1/name = "Walk"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeBlendTree" id=12]
+graph_offset = Vector2( -281, 45.7874 )
+nodes/Idle/node = SubResource( 7 )
+nodes/Idle/position = Vector2( -260, 140 )
+nodes/Jump/node = SubResource( 8 )
+nodes/Jump/position = Vector2( -40, 300 )
+nodes/Walk/node = SubResource( 9 )
+nodes/Walk/position = Vector2( -260, 260 )
+nodes/attack/node = SubResource( 15 )
+nodes/attack/position = Vector2( 280, 240 )
+nodes/attack_state/node = SubResource( 16 )
+nodes/attack_state/position = Vector2( 460, 80 )
+nodes/dead/node = SubResource( 17 )
+nodes/dead/position = Vector2( 520, 260 )
+nodes/dead_alive/node = SubResource( 14 )
+nodes/dead_alive/position = Vector2( 700, 80 )
+nodes/in_air/node = SubResource( 10 )
+nodes/in_air/position = Vector2( 180, 80 )
+nodes/movement/node = SubResource( 11 )
+nodes/movement/position = Vector2( -40, 120 )
+nodes/output/position = Vector2( 960, 80 )
+node_connections = [ "output", 0, "dead_alive", "movement", 0, "Idle", "movement", 1, "Walk", "in_air", 0, "movement", "in_air", 1, "Jump", "attack_state", 0, "in_air", "attack_state", 1, "attack", "dead_alive", 0, "attack_state", "dead_alive", 1, "dead" ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 35.5263
+height = 50.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "Shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "Melee",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.76, 0.76 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.31579, 1.31579 )
+texture = ExtResource( 25 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 18 )
+anims/Dead = SubResource( 13 )
+anims/Idle = SubResource( 3 )
+anims/Jump = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+anims/Walk = SubResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 12 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/attack_state/current = 0
+parameters/dead_alive/current = 0
+parameters/in_air/current = 0
+parameters/movement/current = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0.5, 1 )
+current = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CollisionShape2D"]
+visible = false
+position = Vector2( 0.5, 1 )
+frames = SubResource( 2 )
+animation = "Idle"
+playing = true
