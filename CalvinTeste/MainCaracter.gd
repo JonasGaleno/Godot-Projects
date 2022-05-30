@@ -7,12 +7,17 @@ var jump_force = -450;
 var up = Vector2(0,-1); #verifica se o personagem está no chão, por isso y é negativo
 var motion = Vector2();
 #var grounded
-var HP = 10
-var idDead = false
+var HP = 100
+var isDead = false
 var canPunch = true
 # Jogaremos uma cena nessa variavel, atuará como objeto
 var projecTile
-var punchSpeed = 0.5
+var punchSpeed = 0.6
+
+var HPBar
+
+func _ready():
+	HPBar = load("res://Scenes/HPBar.tscn")
 
 # Função rotina, roda até o game finalizar, ele funciona como loop
 func _physics_process(delta):
@@ -55,3 +60,12 @@ func _physics_process(delta):
 		yield(get_tree().create_timer(punchSpeed), "timeout")
 		canPunch = true
 		$AnimationTree.set("parameters/punch_state/current", 0)
+		
+func takeDamage(damage):
+	HP -= damage
+	$HPBar.set_percent_value_int(damage)
+	if HP <= 0: 
+		isDead = true
+		print("morreu")
+		queue_free()
+#		$AnimationTree.set("parameters/dead_alive/current", 1)
