@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PunchIn.mp3-40729fab5110fb5848f590ac482cc894.mp3str"
+
+[deps]
+
+source_file="res://Sounds/PunchIn.mp3"
+dest_files=[ "res://.import/PunchIn.mp3-40729fab5110fb5848f590ac482cc894.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

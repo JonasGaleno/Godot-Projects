@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MusicaFundo.mp3-762fa6aefe6b3cba317e83a2a0ac2fea.mp3str"
+
+[deps]
+
+source_file="res://Sounds/MusicaFundo.mp3"
+dest_files=[ "res://.import/MusicaFundo.mp3-762fa6aefe6b3cba317e83a2a0ac2fea.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
