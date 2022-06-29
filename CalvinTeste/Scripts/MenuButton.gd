@@ -4,6 +4,7 @@ extends TextureButton
 export(String) var text = "Text Button"
 export(int) var arrow_margin_from_center = 100
 
+class_name Buttons
 
 func _ready():
 	setup_text()

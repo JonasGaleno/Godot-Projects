@@ -5,7 +5,7 @@ var velocity = Vector2(0, 0)
 var speed = 35
 var canDamage = true
 var isDead = false
-var enemyHP = 3
+var enemyHP = 4
 var is_moving_right = true
 
 

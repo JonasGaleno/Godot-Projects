@@ -8,7 +8,7 @@ var speed = 25
 var canDamage = true
 var isShooting = false
 var isDead = false
-var enemyHP = 3
+var enemyHP = 6
 var is_moving_right = true
 
 func _ready():
@@ -58,7 +58,7 @@ func takeDamage(damage):
 		isDead = true
 		$AnimatedSprite.play('Dead')
 		$AnimatedSprite.position.y = 23
-		yield(get_tree().create_timer(1),"timeout")
+		yield(get_tree().create_timer(0.7),"timeout")
 		queue_free()
 
 func _on_Timer_timeout():

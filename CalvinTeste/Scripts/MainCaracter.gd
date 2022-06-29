@@ -15,7 +15,7 @@ var canPunch = true
 var checkPoint = Vector2()
 # Jogaremos uma cena nessa variavel, atuará como objeto
 var projecTile
-var punchSpeed = 1
+var punchSpeed = 0.7
 
 func _ready():
 	checkPoint = $".".position
@@ -25,7 +25,7 @@ func _physics_process(delta):
 	if !isDead:
 		playerMoves()
 	else:
-		yield(get_tree().create_timer(1), "timeout")
+		yield(get_tree().create_timer(1.5), "timeout")
 		$".".position = checkPoint
 		HP = 10
 		emit_signal("hp_slider", HP)
@@ -36,7 +36,7 @@ func playerMoves():
 	motion.y += gravity;
 	
 	# Movimentação do personagem
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") and canPunch:
 		motion.x = move_speed
 		$Sprite.scale.x = 1
 		#acessando o componente de estado, acessando o estado 1 - Walk
@@ -44,7 +44,7 @@ func playerMoves():
 		
 		# Ajustando a posição do projétil quando sai do player
 #		$Position2D.position.x = position2DStart
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left") and canPunch:
 		motion.x = -move_speed
 		$Sprite.scale.x = -1
 		$AnimationTree.set("parameters/movement/current", 1)	
@@ -69,9 +69,9 @@ func playerMoves():
 	# Animação de soco is_action_just_pressed
 	if Input.is_action_pressed("ui_punch") and canPunch:
 		$AnimationTree.set("parameters/punch_state/current", 1)
-		$PunchSound.play()
 		canPunch = false
 		yield(get_tree().create_timer(punchSpeed), "timeout")
+		$PunchSound.play()
 		canPunch = true
 		$AnimationTree.set("parameters/punch_state/current", 0)
 		
@@ -86,3 +86,7 @@ func takeDamage(damage):
 func _on_PunchHit_area_entered(area):
 	if area.is_in_group("hurtbox"):
 		area.takeDamage()
+
+func _on_DeathZone_body_entered(body):
+	$".".position = checkPoint
+	takeDamage(1)

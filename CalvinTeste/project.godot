@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TextureButton",
+"class": "Buttons",
+"language": "GDScript",
+"path": "res://Scripts/MenuButton.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "EnemyBase",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/ProjectTile.gd"
 } ]
 _global_script_class_icons={
+"Buttons": "",
 "EnemyBase": "",
 "ProjecTile": ""
 }
@@ -29,6 +35,10 @@ _global_script_class_icons={
 config/name="CalvinTeste"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Pause="*res://Scenes/Pause.tscn"
 
 [display]
 

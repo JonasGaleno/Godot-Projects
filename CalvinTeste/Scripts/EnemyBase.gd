@@ -18,7 +18,8 @@ func _ready():
 	finalPosition = initialPosition + distance
 
 func _physics_process(delta):
-	enemyActions()
+	if not isDead:
+		enemyActions()
 	
 func enemyActions():
 	if not isKicking:
@@ -55,5 +56,5 @@ func takeDamage(damage):
 		isDead = true
 		$AnimatedSprite.play('Dead')
 		$AnimatedSprite.position.y = 23
-		yield(get_tree().create_timer(3),"timeout")
+		yield(get_tree().create_timer(1),"timeout")
 		queue_free()

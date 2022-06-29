@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Scripts/EndLevel.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/EnemyBase.gd" type="Script" id=2]
@@ -421,16 +421,6 @@ thickness = 8
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 13 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 9 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "Justu",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 12 ) ],
-"loop": false,
-"name": "Dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Idle",
@@ -439,6 +429,16 @@ animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 4 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 13 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "Justu",
 "speed": 5.0
 } ]
 
@@ -449,6 +449,9 @@ height = 34.0
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 7.5, 17.25 )
 
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 947.5, 10 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -456,7 +459,7 @@ position = Vector2( -3, 544 )
 tile_set = SubResource( 10 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 262211, 15, 0, 262212, 16, 0, 262213, 16, 0, 262214, 17, 0, 327744, 12, 0, 327747, 13, 0, 327748, 18, 0, 327749, 18, 0, 327750, 14, 0, 327751, 12, 0, 393216, 0, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 2, 0, 393232, 3, 0, 393284, 11, 0, 458768, 9, 0, 458769, 3, 0, 458819, 13, 0, 458822, 14, 0, 524305, 9, 0, 524306, 4, 0, 524307, 5, 0, 524326, 4, 0, 524327, 8, 0, 524328, 8, 0, 524329, 8, 0, 524330, 8, 0, 524331, 8, 0, 524332, 8, 0, 524333, 8, 0, 524334, 8, 0, 524335, 5, 0, 589842, 6, 0, 589843, 7, 0, 589847, 10, 0, 589848, 10, 0, 589849, 10, 0, 589850, 10, 0, 589851, 10, 0, 589852, 10, 0, 589853, 10, 0, 589854, 10, 0, 589855, 10, 0, 589856, 10, 0, 589857, 8, 0, 589858, 8, 0, 589859, 6, 0, 589862, 6, 0, 589871, 7, 0, 589872, 8, 0, 589873, 8, 0, 589874, 8, 0, 589875, 8, 0, 589876, 8, 0, 589877, 8, 0, 589878, 8, 0, 589879, 8, 0, 589880, 8, 0, 589881, 8, 0, 589882, 8, 0, 589883, 8, 0, 589884, 8, 0, 589885, 8, 0, 589886, 10, 0, 589887, 10, 0, 589888, 10, 0, 589889, 10, 0, 589890, 10, 0, 589891, 10, 0, 589892, 10, 0, 589893, 10, 0, 589894, 10, 0, 589895, 10, 0, 589896, 10, 0, 589897, 10, 0, 589898, 10, 0, 589899, 10, 0, 589900, 10, 0, 589901, 10, 0, 589902, 10, 0, 589903, 10, 0, 589904, 10, 0, 589905, 10, 0, 589906, 10, 0, 589907, 10, 0, 589908, 10, 0, 589909, 10, 0, 589910, 10, 0, 655379, 6, 0, 655383, 6, 0, 655395, 6, 0, 655398, 6, 0, 720915, 6, 0, 720919, 6, 0, 720931, 6, 0, 720934, 6, 0, 786451, 6, 0, 786455, 6, 0, 786467, 6, 0, 786470, 6, 0, 851987, 6, 0, 851991, 6, 0, 852003, 8, 0, 852004, 8, 0, 852005, 8, 0, 852006, 8, 0, 917523, 6, 0, 917527, 6, 0, 983059, 6, 0, 983060, 8, 0, 983061, 8, 0, 983062, 8, 0, 983063, 6, 0 )
+tile_data = PoolIntArray( 262211, 15, 0, 262212, 16, 0, 262213, 16, 0, 262214, 17, 0, 327744, 12, 0, 327747, 13, 0, 327748, 18, 0, 327749, 18, 0, 327750, 14, 0, 327751, 12, 0, 393216, 0, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 2, 0, 393232, 3, 0, 393284, 11, 0, 458768, 9, 0, 458769, 3, 0, 458819, 13, 0, 458822, 14, 0, 524305, 9, 0, 524306, 4, 0, 524307, 5, 0, 524326, 4, 0, 524327, 8, 0, 524328, 8, 0, 524329, 8, 0, 524330, 8, 0, 524331, 8, 0, 524332, 8, 0, 524333, 8, 0, 524334, 8, 0, 524335, 5, 0, 589842, 6, 0, 589843, 7, 0, 589847, 10, 0, 589848, 10, 0, 589849, 10, 0, 589850, 10, 0, 589851, 10, 0, 589852, 10, 0, 589853, 10, 0, 589854, 10, 0, 589855, 10, 0, 589856, 10, 0, 589857, 8, 0, 589858, 8, 0, 589859, 6, 0, 589862, 6, 0, 589871, 7, 0, 589872, 8, 0, 589873, 8, 0, 589874, 8, 0, 589875, 8, 0, 589876, 8, 0, 589877, 8, 0, 589878, 8, 0, 589879, 8, 0, 589880, 8, 0, 589881, 8, 0, 589882, 8, 0, 589883, 8, 0, 589884, 8, 0, 589885, 8, 0, 589886, 10, 0, 589887, 10, 0, 589888, 10, 0, 589889, 10, 0, 589890, 10, 0, 589891, 10, 0, 589892, 10, 0, 589893, 10, 0, 589894, 10, 0, 589895, 10, 0, 589896, 10, 0, 589897, 10, 0, 589898, 10, 0, 589899, 10, 0, 589900, 10, 0, 589901, 10, 0, 589902, 10, 0, 589903, 10, 0, 589904, 10, 0, 589905, 10, 0, 589906, 10, 0, 589907, 10, 0, 589908, 10, 0, 589909, 10, 0, 589910, 10, 0, 655379, 6, 0, 655383, 6, 0, 655395, 6, 0, 655398, 6, 0, 720915, 6, 0, 720919, 6, 0, 720931, 6, 0, 720934, 6, 0, 786451, 6, 0, 786455, 6, 0, 786467, 6, 0, 786470, 6, 0, 851987, 6, 0, 851991, 6, 0, 852003, 8, 0, 852006, 8, 0, 917523, 6, 0, 917527, 6, 0, 983059, 6, 0, 983063, 6, 0 )
 
 [node name="MainCaracter" parent="." instance=ExtResource( 22 )]
 position = Vector2( 15, 615 )
@@ -526,6 +529,14 @@ shape = SubResource( 20 )
 [node name="EnemyShooter" parent="." instance=ExtResource( 31 )]
 position = Vector2( 446, 657 )
 
+[node name="DeathZone" type="Area2D" parent="."]
+position = Vector2( 465, 839 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2( 200.5, 0 )
+shape = SubResource( 21 )
+
 [connection signal="hp_slider" from="MainCaracter" to="CanvasLayer/Control/HSlider" method="_on_MainCaracter_hp_slider"]
 [connection signal="body_entered" from="EndLevel" to="EndLevel" method="_on_EndLevel_body_entered"]
 [connection signal="body_exited" from="EndLevel" to="EndLevel" method="_on_EndLevel_body_exited"]
+[connection signal="body_entered" from="DeathZone" to="MainCaracter" method="_on_DeathZone_body_entered"]
